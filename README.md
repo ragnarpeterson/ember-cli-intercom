@@ -1,25 +1,33 @@
-# Ember-cli-intercom
+# ember-cli-intercom
 
-This README outlines the details of collaborating on this Ember addon.
+Easily add Intercom to your app.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+```bash
+# From within your ember-cli project
+ember install ember-cli-intercom
+```
 
-## Running
+## Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+First you'll need to configure your Intercom App ID:
 
-## Running Tests
+```javascript
+// config/environment.js
 
-* `ember test`
-* `ember test --server`
+ENV['ember-cli-intercom'] = {
+  appId: '[YOUR_APP_ID]'
+};
+```
 
-## Building
+Then, once a user has authenticated, you will need to boot intercom. You can inject the `intercom` service provided by this addon into a `route/component/service/whatever` and call the boot method:
 
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+```javascript
+this.get('intercom').boot({
+  app_id: config['ember-cli-intercom'].appId,
+  name: '[YOUR_USERS_NAME]',
+  email: '[YOUR_USERS_EMAIL]',
+  created_at: '[YOUR_USERS_SIGNUP_DATE]'
+});
+```
