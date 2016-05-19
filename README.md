@@ -25,7 +25,6 @@ Then, once a user has authenticated, you will need to boot intercom. You can inj
 
 ```javascript
 this.get('intercom').boot({
-  app_id: config['ember-cli-intercom'].appId,
   name: '[YOUR_USERS_NAME]',
   email: '[YOUR_USERS_EMAIL]',
   created_at: '[YOUR_USERS_SIGNUP_DATE]'
