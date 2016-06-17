@@ -25,7 +25,7 @@ export default Ember.Service.extend({
 
   showMessages() {
     Intercom('showMessages');
-  }
+  },
 
   showNewMessage(text) {
     if (text) {
