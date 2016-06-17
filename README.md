@@ -30,3 +30,46 @@ this.get('intercom').boot({
   created_at: '[YOUR_USERS_SIGNUP_DATE]'
 });
 ```
+
+## API
+
+This service exposes some of the [Intercom available API](https://docs.intercom.io/configure-intercom-for-your-product-or-site/customize-the-intercom-messenger/the-intercom-javascript-api).
+
+* `Intercom('boot')`
+
+  ```javascript
+    this.get('intercom').boot({});
+  ```
+
+* `Intercom('shutdown')`
+
+  ```javascript
+    this.get('intercom').shutdown();
+  ```
+
+* `Intercom('hide')`
+
+  ```javascript
+    this.get('intercom').hide();
+  ```
+
+* `Intercom('show')`
+
+  ```javascript
+    this.get('intercom').show();
+  ```
+
+* `Intercom('showMessages')`
+
+  ```javascript
+    this.get('intercom').showMessages();
+  ```
+
+* `Intercom('showNewMessage', 'pre-populated content')`
+
+  You can use this either with or without the text parameter.
+
+  ```javascript
+    this.get('intercom').showNewMessage('My text');
+  this.get('intercom').showNewMessage();
+  ```
