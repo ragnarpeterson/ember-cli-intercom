@@ -33,5 +33,9 @@ export default Ember.Service.extend({
     } else {
       Intercom('showNewMessage');
     }
+  },
+
+  trackEvent(eventName, params) {
+    Intercom('trackEvent', eventName, params);
   }
 });
