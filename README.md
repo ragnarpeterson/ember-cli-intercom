@@ -73,3 +73,9 @@ This service exposes some of the [Intercom available API](https://docs.intercom.
     this.get('intercom').showNewMessage('My text');
   this.get('intercom').showNewMessage();
   ```
+  
+* `Intercom('trackEvent')`
+
+  ```javascript
+    this.get('intercom').trackEvent('event-name', { meta: data });
+  ```
