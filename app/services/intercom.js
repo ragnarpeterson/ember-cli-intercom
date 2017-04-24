@@ -4,38 +4,45 @@ import config from '../config/environment';
 export default Ember.Service.extend({
   boot(params) {
     params['app_id'] = config['ember-cli-intercom'].appId;
-    Intercom('boot', params);
+
+    this.intercomApi('boot', params);
+  },
+
+  intercomApi(...args) {
+    if (typeof Intercom !== 'undefined') {
+      Intercom(...args);
+    }
   },
 
   update(params) {
-    Intercom('update', params);
+    this.intercomApi('update', params);
   },
 
   shutdown() {
-    Intercom('shutdown');
+    this.intercomApi('shutdown');
   },
 
   hide() {
-    Intercom('hide');
+    this.intercomApi('hide');
   },
 
   show() {
-    Intercom('show');
+    this.intercomApi('show');
   },
 
   showMessages() {
-    Intercom('showMessages');
+    this.intercomApi('showMessages');
   },
 
   showNewMessage(text) {
     if (text) {
-      Intercom('showNewMessage', text);
+      this.intercomApi('showNewMessage', text);
     } else {
-      Intercom('showNewMessage');
+      this.intercomApi('showNewMessage');
     }
   },
 
   trackEvent(eventName, params) {
-    Intercom('trackEvent', eventName, params);
+    this.intercomApi('trackEvent', eventName, params);
   }
 });
