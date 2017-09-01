@@ -3,6 +3,9 @@ import Service from '@ember/service';
 import config from '../config/environment';
 
 export default Service.extend({
+
+  disabled: false,
+
   boot(params) {
     params['app_id'] = config['ember-cli-intercom'] && config['ember-cli-intercom'].appId;
 
@@ -10,7 +13,7 @@ export default Service.extend({
   },
 
   intercomApi(...args) {
-    if (typeof Intercom !== 'undefined') {
+    if (typeof Intercom !== 'undefined' && !this.get('disabled')) {
       Intercom(...args);
     }
   },
