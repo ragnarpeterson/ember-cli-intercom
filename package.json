@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-intercom",
-  "version": "0.4.0",
+  "version": "0.4.0-cogniteev-patch0",
   "description": "Ember addon to easily add Intercom to your app.",
   "keywords": [
     "ember-addon",
