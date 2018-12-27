@@ -1,3 +1,4 @@
+/* global Intercom */
 import Service from '@ember/service';
 import config from '../config/environment';
 
