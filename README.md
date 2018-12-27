@@ -21,6 +21,8 @@ ENV['ember-cli-intercom'] = {
 };
 ```
 
+You can set `appId` to `null` in environments where you do not want Intercom to load.
+
 Then, once a user has authenticated, you will need to boot intercom. You can inject the `intercom` service provided by this addon into a `route/component/service/whatever` and call the boot method:
 
 ```javascript
