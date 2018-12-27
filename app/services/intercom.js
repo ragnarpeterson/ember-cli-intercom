@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Service from '@ember/service';
 import config from '../config/environment';
 
-export default Ember.Service.extend({
+export default Service.extend({
   boot(params) {
     params['app_id'] = config['ember-cli-intercom'].appId;
     Intercom('boot', params);

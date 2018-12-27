@@ -1,10 +1,12 @@
-import Ember from 'ember'
+import { on } from '@ember/object/evented';
+import { inject as service } from '@ember/service';
+import EmberRouter from '@ember/routing/router';
 
 export function initialize() {
-  Ember.Router.reopen({
-    intercom: Ember.inject.service(),
+  EmberRouter.reopen({
+    intercom: service(),
 
-    notifyIntercom: Ember.on('didTransition', function () {
+    notifyIntercom: on('didTransition', function () {
       this.get('intercom').update();
     })
   });
