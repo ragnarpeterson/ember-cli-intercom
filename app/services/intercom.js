@@ -3,7 +3,7 @@ import config from '../config/environment';
 
 export default Service.extend({
   boot(params) {
-    params['app_id'] = config['ember-cli-intercom'].appId;
+    params['app_id'] = config['ember-cli-intercom'] && config['ember-cli-intercom'].appId;
 
     this.intercomApi('boot', params);
   },
